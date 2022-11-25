@@ -1,19 +1,4 @@
-﻿
-/*
-
-  Shape Shifter
-  =============
-  A canvas experiment by Kenneth Cachia
-  http://www.kennethcachia.com
-
-  Updated code
-  ------------
-  https://github.com/kennethcachia/Shape-Shifter 
-
-*/
-
-
-var S = {
+﻿var S = {
     init: function () {
         var action = window.location.href,
             i = action.indexOf('?a=');
