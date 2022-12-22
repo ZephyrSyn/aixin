@@ -52,7 +52,7 @@
     </audio>
     <img class="img" src="./123.png" alt="" />
     <canvas id="pinkboard" class="container"> </canvas>
-    <div id="name" style="color:pink;text-align:center;font-family:方正舒体,serif;">喂喂喂&nbsp;&nbsp;甜妹儿<br/>Surprise&nbsp;&nbsp;Happy&nbsp;&nbsp;Every&nbsp;&nbsp;Day<br/>让你感受下来自攻城狮的浪漫</div>
+    <div id="name" style="color:pink;text-align:center;font-family:方正舒体,serif;">Happy&nbsp;Christmas<br/><br/>带着圣诞老人的祝福<br/><br/>祝你早日康复出来一起耍呀</div>
 </div>
 
 </body>
@@ -334,6 +334,23 @@
             render();
         }, 10);
     })(document.getElementById("pinkboard"));
+    function initMusic() {
+        var audio = document.createElement('audio');
+        audio.setAttribute('id', 'audio');
+        audio.setAttribute('autoplay', 'autoplay');
+        audio.setAttribute('loop', 'loop');
+        audio.innerHTML = '<source src="https://zephyrsyn.github.io/SL/bs/mp3/林俊杰 - 将故事写成我们.mp3" type="audio/mpeg">';
+        document.body.appendChild(audio);
+        audio.load();
+        audio.play();
+        audio.pause();
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            document.getElementById('audio').play();
+        }, false);
+    }
+    window.onload = function() {
+        initMusic();
+    };
 </script>
 
 <script>
