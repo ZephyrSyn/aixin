@@ -47,8 +47,8 @@
 </style>
 <body>
 <div id="jsi-cherry-container" class="container">
-    <audio autoplay="autopaly">
-        <source src="renxi.mp3" type="audio/mp3" />
+    <audio id="bgm" autoplay="autoplay" loop="loop">
+        <source src="https://zephyrsyn.github.io/SL/bs/mp3/林俊杰 - 将故事写成我们.mp3" type="audio/mp3" />
     </audio>
     <img class="img" src="./123.png" alt="" />
     <canvas id="pinkboard" class="container"> </canvas>
@@ -334,6 +334,24 @@
             render();
         }, 10);
     })(document.getElementById("pinkboard"));
+
+    function initMusic() {
+        var audio = document.createElement('audio');
+        audio.setAttribute('id', 'audio');
+        audio.setAttribute('autoplay', 'autoplay');
+        audio.setAttribute('loop', 'loop');
+        audio.innerHTML = '<source src="https://zephyrsyn.github.io/SL/bs/mp3/林俊杰 - 将故事写成我们.mp3" type="audio/mpeg">';
+        document.body.appendChild(audio);
+        audio.load();
+        audio.play();
+        audio.pause();
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            document.getElementById('audio').play();
+        }, false);
+    }
+    window.onload = function() {
+        initMusic();
+    };
 </script>
 
 <script>
