@@ -21,7 +21,7 @@
 };
 
 function show() {
-    window.location.href = "https://zephyrsyn.github.io/bigsun-blog/miraitowa/surprise.html";
+    window.location.href = "https://zephyrsyn.github.io/bigsun-blog/miraitowa/surprise-wx.html";
 }
 
 
