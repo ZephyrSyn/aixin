@@ -126,12 +126,14 @@
     window.addEventListener("resize", onResize);
     requestAnimationFrame(render);
 
-    window.onload = function starttime() {
+    function startTime() {
         time(h1, '2024/8/22');     // 在一起的时间
-        ptimer = setTimeout(starttime, 1000); // 添加计时器
+        ptimer = setTimeout(startTime, 1000); // 添加计时器
+    }
+    window.onload = function () {
+        startTime();
         initMusic(); // 背景音乐
     }
-
     function time(obj, futimg) {
         var nowtime = new Date().getTime(); // 现在时间转换为时间戳
         var futruetime = new Date(futimg).getTime(); // 未来时间转换为时间戳

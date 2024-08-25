@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=yes, minimum-scale=0.4">
     <title>💗</title>
     <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 </head>
 <style>
     * {
@@ -335,7 +336,6 @@
             onResize();
             render();
         }, 10);
-        initMusic();
     })(document.getElementById("pinkboard"));
 </script>
 
@@ -368,22 +368,29 @@
                 y = this.renderer.height / 2 - this.y * rate;
             return { rate: rate, x: x, y: y };
         },
-        initMusic: function () {
-            var audio = document.createElement('audio');
-            audio.setAttribute('id', 'audio');
-            audio.setAttribute('autoplay', 'autoplay');
-            audio.setAttribute('loop', 'loop');
-            audio.innerHTML = '<source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/尤长靖-昨日青空.mp3" type="audio/mpeg">';
-            document.body.appendChild(audio);
-            audio.load();
-            audio.play();
-            audio.pause();
-            document.addEventListener("WeixinJSBridgeReady", function() {
-                document.getElementById('audio').play();
-            }, false);
-        },
     }
     $(function () {
         RENDERER.init();
     });
+</script>
+
+<script type="text/javascript">
+    //背景音乐
+    function initMusic() {
+        var audio = document.createElement('audio');
+        audio.setAttribute('id', 'audio');
+        audio.setAttribute('autoplay', 'autoplay');
+        audio.setAttribute('loop', 'loop');
+        audio.innerHTML = '<source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/尤长靖-昨日青空.mp3" type="audio/mpeg">';
+        document.body.appendChild(audio);
+        audio.load();
+        audio.play();
+        audio.pause();
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            document.getElementById('audio').play();
+        }, false);
+    }
+    window.onload = function() {
+        initMusic(); // 背景音乐
+    }
 </script>
