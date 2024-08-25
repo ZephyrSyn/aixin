@@ -44,9 +44,9 @@
 </style>
 <body>
 <div id="jsi-cherry-container" class="container">
-    <audio autoplay="autoplay">
-        <source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/林俊杰 - 将故事写成我们.mp3" type="audio/mp3" />
-    </audio>
+<!--    <audio autoplay="autoplay">-->
+<!--        <source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/林俊杰-将故事写成我们.mp3" type="audio/mp3" />-->
+<!--    </audio>-->
     <canvas id="pinkboard" class="container"> </canvas>
     <div id="name" style="color:pink;text-align:center;font-family:方正舒体,serif;width: 250px">
         <p style="text-align: left">彭彭：</p>
@@ -335,6 +335,7 @@
             onResize();
             render();
         }, 10);
+        initMusic();
     })(document.getElementById("pinkboard"));
 </script>
 
@@ -345,7 +346,6 @@
 
         init: function () {
             this.setParameters();
-            this.initMusic();
             this.render();
             if (
                 navigator.userAgent.match(
@@ -373,7 +373,7 @@
             audio.setAttribute('id', 'audio');
             audio.setAttribute('autoplay', 'autoplay');
             audio.setAttribute('loop', 'loop');
-            audio.innerHTML = '<source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/林俊杰 - 将故事写成我们.mp3" type="audio/mpeg">';
+            audio.innerHTML = '<source src="https://zephyrsyn.github.io/bigsun-blog/miraitowa/mp3/尤长靖-昨日青空.mp3" type="audio/mpeg">';
             document.body.appendChild(audio);
             audio.load();
             audio.play();
